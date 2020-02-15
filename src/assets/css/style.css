@@ -78,3 +78,18 @@ body {
   font-family: CustomFont;
   src: url(../../SKETCHY.ttf);
 }
+
+
+/* ================================ Transition Group Animations */
+
+.fade-appear {
+  opacity:0;
+  transform: scale(2);
+
+}
+
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 600ms ease-in;
+}
