@@ -9,6 +9,7 @@ import { animated, useTransition } from 'react-spring';
 const App = () => {
   const [quotes, setQuotes] = useState([]);
   const [quote, setQuote] = useState();
+  const [ counter, setCounter]=useState(0);
 
   useEffect(() => {
     doFetch();
@@ -37,29 +38,35 @@ const App = () => {
   };
 
   const transitions = useTransition(quotes, quote, {
-    from: { marginTop: '-200%' },
-    enter: { marginTop: '0'},
-    leave: { marginTop: '200%' }
+    from: { marginLeft: '20%', width: '120%', position: 'absolute', opacity: 0, marginTop: '-200%' },
+    enter: {position: 'absolute', opacity: 1, marginTop: '0%'  },
+    leave: { position: 'absolute', opacity: 0, marginTop: '200%' }
   });
 
+  const handleClick = (e) => {
 
+    setCounter(counter+1);
+   
+      setQuote(quotes[counter])
+    
+  };
 
   return (
     <div className='container'>
       <img src={ron} alt='' className='imgRon' />
 
       <div className='quote-win'>
-        <animated.h1 
-        className='quote'
-        ></animated.h1>
+        {/* <animated.h1 className='quote'></animated.h1> */}
 
         {transitions.map(({ item, key, props }) => {
-
-         return <animated.h1 key={key} style={props} className='quote'>{item}</animated.h1>
-
+          return (
+            <animated.h1 key={key} style={props} className='quote'>
+              {quote}
+            </animated.h1>
+          );
         })}
 
-        <button className='button' onClick={doFetch}>
+        <button className='button' onClick={handleClick}>
           NEXT
         </button>
       </div>
