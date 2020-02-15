@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import '../assets/css/style.css';
-import Main from './Main'
+import Main from './Main';
 import axios from 'axios';
-import ron from '../Parks&Recreation/ron01.jpg'
-
+import ron from '../Parks&Recreation/ron01.jpg';
+import { Transition } from 'react-transition-group';
 
 class App extends Component {
   constructor(props) {
@@ -14,21 +14,21 @@ class App extends Component {
     };
   }
 
-componentDidMount(){
-  this.doFetch();
-}
+  componentDidMount() {
+    this.doFetch();
+  }
 
-doFetch = async () => {
-  const res = await axios('https://ron-swanson-quotes.herokuapp.com/v2/quotes/')
-  
-  const quotesArray = res.data
+  doFetch = async () => {
+    const res = await axios(
+      'https://ron-swanson-quotes.herokuapp.com/v2/quotes/'
+    );
 
-  
+    const quotesArray = res.data;
 
-  this.setState(state => ({quotes: quotesArray}));
+    this.setState(state => ({ quote: quotesArray }));
 
-console.log(this.state.quotes)
-}
+    console.log(this.state.quotes);
+  };
 
   render() {
     return (
@@ -36,12 +36,14 @@ console.log(this.state.quotes)
         <img src={ron} alt='' className='imgRon' />
 
         <div className='quote-win'>
-          <h1 className='quote'>{this.state.quotes}</h1>
-          <button className='button' onClick={this.doFetch}>NEXT</button>
+          <h1 className='quote'>{this.state.quote}</h1>
+          <button className='button' onClick={this.doFetch}>
+            NEXT
+          </button>
         </div>
       </div>
     );
   }
 }
 
-export default App
+export default App;

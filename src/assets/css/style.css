@@ -13,7 +13,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-
 .container {
   width: 100vw;
   height: 100vh;
@@ -25,8 +24,6 @@ body {
   position: relative;
 }
 
-
-
 .quote-win {
   width: 25%;
   height: 25%;
@@ -37,50 +34,44 @@ body {
   position: absolute;
   right: 20%;
   flex-direction: column;
-
 }
 
 .imgRon {
- 
   height: 150%;
   margin-left: -30%;
-  
 }
 
 .quote {
   border-radius: 45vw;
   padding: 2vw;
   text-align: justify;
-  margin-right: -55% ; 
+  margin-right: -55%;
   font-family: 'CustomFont';
-  letter-spacing: .5vw;
+  letter-spacing: 0.5vw;
   font-weight: 100;
   font-size: 3vw;
 }
 
 .button {
   position: absolute;
-bottom: -120%;
-right: 125%;
+  bottom: -120%;
+  right: 125%;
 
-background-color: transparent;
-border: .2vw solid aqua;
-border-radius: 50%;
-text-align: center;
-width: 5vw;
-height: 5vw;
-padding: 1vw;
-outline: none;
-font-weight: bold;
-
-
+  background-color: transparent;
+  border: 0.2vw solid aqua;
+  border-radius: 50%;
+  text-align: center;
+  width: 5vw;
+  height: 5vw;
+  padding: 1vw;
+  outline: none;
+  font-weight: bold;
 }
 
 .button:hover {
   background-color: lightskyblue;
-border: .2vw solid black;
-font-weight: bold;
-
+  border: 0.2vw solid black;
+  font-weight: bold;
 }
 
 @font-face {
