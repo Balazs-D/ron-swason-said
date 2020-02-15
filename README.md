@@ -13,6 +13,6 @@ Simple quote app based on Parks & Recreation`s iconic character Ron Swanson.
 
 ### Preview
 
-![Screenshot](../src/Parks&Recreation/ronShot.png)
+![Screenshot](/src/Parks&Recreation/ronShot.png)
 
 ### [Go to app.](https://ron-swanson-said.now.sh/)
