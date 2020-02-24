@@ -41,7 +41,7 @@ body {
   width: 35%;
   background-image: url(../../Parks&Recreation/ron01.1.jpg);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   margin-left: 7%;
 }
 
