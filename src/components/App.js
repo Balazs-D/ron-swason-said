@@ -9,7 +9,7 @@ import { animated, useTransition } from 'react-spring';
 const App = () => {
   const [quotes, setQuotes] = useState([]);
   const [quote, setQuote] = useState();
-  const [ counter, setCounter]=useState(0);
+  const [counter, setCounter] = useState(0);
 
   useEffect(() => {
     doFetch();
@@ -38,17 +38,21 @@ const App = () => {
   };
 
   const transitions = useTransition(quotes, quote, {
-    from: { marginLeft: '20%', width: '120%', position: 'absolute', opacity: 0, marginTop: '-200%' },
-    enter: {position: 'absolute', opacity: 1, marginTop: '0%'  },
+    from: {
+      marginLeft: '20%',
+      width: '120%',
+      position: 'absolute',
+      opacity: 0,
+      marginTop: '-200%'
+    },
+    enter: { position: 'absolute', opacity: 1, marginTop: '0%' },
     leave: { position: 'absolute', opacity: 0, marginTop: '200%' }
   });
 
-  const handleClick = (e) => {
+  const handleClick = e => {
+    setCounter(counter + 1);
 
-    setCounter(counter+1);
-   
-      setQuote(quotes[counter])
-    
+    setQuote(quotes[counter]);
   };
 
   return (
