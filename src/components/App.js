@@ -56,22 +56,23 @@ const App = () => {
   };
 
   return (
-    <div className='container'>
-      <img src={ron} alt='' className='imgRon' />
+    <div className="container">
+      <div style={{ ron }} className="imgRon" />
+      <div />
 
-      <div className='quote-win'>
+      <div className="quote-win">
         {/* <animated.h1 className='quote'></animated.h1> */}
 
         {transitions.map(({ item, key, props }) => {
           return (
-            <animated.h1 key={key} style={props} className='quote'>
+            <animated.h1 key={key} style={props} className="quote">
               {quote}
             </animated.h1>
           );
         })}
 
-        <button className='button' onClick={handleClick}>
-          NEXT
+        <button className="button" onClick={handleClick}>
+          
         </button>
       </div>
     </div>
